@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@release
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -27,12 +27,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Setup private JFrog NPM repository
-        run: |
-          npm config set _auth ${{ secrets.NPM_TOKEN }}
-          npm config set registry https://rbcplatform.jfrog.io/rbcplatform/api/npm/npm-virtual
-          npm config set always-auth true
-          npm config list | grep 'registry'
+      # - name: Setup private JFrog NPM repository
+      #   run: |
+      #     npm config set _auth ${{ secrets.NPM_TOKEN }}
+      #     npm config set registry https://rbcplatform.jfrog.io/rbcplatform/api/npm/npm-virtual
+      #     npm config set always-auth true
+      #     npm config list | grep 'registry'
 
       - name: Install NPM packages for App
         run: yarn

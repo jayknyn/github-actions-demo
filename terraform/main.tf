@@ -100,7 +100,7 @@ resource "aws_cloudfront_distribution" "jk-distribution" {
   price_class      = "PriceClass_200"
   retain_on_delete = true
 
-  aliases = ["${var.subdomain}.fourth-sandbox.com"]
+  # aliases = ["${var.subdomain}.fourth-sandbox.com"]
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
@@ -119,8 +119,9 @@ resource "aws_cloudfront_distribution" "jk-distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn = data.aws_acm_certificate.cert.arn
-    ssl_support_method  = "sni-only"
+    cloudfront_default_certificate = true
+    # acm_certificate_arn = data.aws_acm_certificate.cert.arn
+    # ssl_support_method  = "sni-only"
   }
 
   restrictions {
@@ -130,20 +131,20 @@ resource "aws_cloudfront_distribution" "jk-distribution" {
   }
 }
 
-data "aws_route53_zone" "domain" {
-  name = var.domain
-}
+# data "aws_route53_zone" "domain" {
+#   name = var.domain
+# }
 
-resource "aws_route53_record" "cf-subdomain" {
-  zone_id = data.aws_route53_zone.domain.zone_id
-  name    = var.subdomain
-  type    = "A"
-  alias {
-    name                   = aws_cloudfront_distribution.jk-distribution.domain_name
-    zone_id                = aws_cloudfront_distribution.jk-distribution.hosted_zone_id
-    evaluate_target_health = false
-  }
-}
+# resource "aws_route53_record" "cf-subdomain" {
+#   zone_id = data.aws_route53_zone.domain.zone_id
+#   name    = var.subdomain
+#   type    = "A"
+#   alias {
+#     name                   = aws_cloudfront_distribution.jk-distribution.domain_name
+#     zone_id                = aws_cloudfront_distribution.jk-distribution.hosted_zone_id
+#     evaluate_target_health = false
+#   }
+# }
 
 # To Do:
 # - provision role for lambda

@@ -4,7 +4,7 @@ variable "bucket_name" {}
 
 variable "s3_origin_id" {}
 
-variable "domain" {}
+# variable "domain" {}
 
-variable "subdomain" {}
+# variable "subdomain" {}
 

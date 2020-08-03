@@ -4,6 +4,6 @@ bucket_name = "jibhi-test-bucket"
 
 s3_origin_id = "jk-s3-id"
 
-domain = "fourth-sandbox.com"
+# domain = "fourth-sandbox.com"
 
-subdomain = "jk6"
+# subdomain = "jk6"
