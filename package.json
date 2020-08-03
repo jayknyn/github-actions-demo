@@ -1,14 +1,14 @@
 {
-  "name": "github-actions-aws",
+  "name": "github-actions-demo",
   "version": "1.0.0",
   "description": "poc for github actions to aws",
   "main": "index.js",
-  "repository": "https://github.com/jayknyn/github-actions-aws.git",
-  "author": "Jay Kannaiyan <jay.kannaiyan@hotschedules.com>",
+  "repository": "https://github.ibm.com/jay-kannaiyan/github-actions-demo",
+  "author": "Jay Kannaiyan <jay.kannaiyan@ibm.com>",
   "license": "MIT",
   "scripts": {
     "start": "nodemon ./server.js",
-    "dev build": "webpack --watch -d",
+    "dev-build": "webpack --watch -d",
     "install-npm-lambda": "cd lambda && npm install",
     "build": "webpack"
   },

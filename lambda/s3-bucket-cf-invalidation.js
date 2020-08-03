@@ -1,5 +1,5 @@
 /**
- * When an index.html is created/updated on a bucket: Finds a distribution that uses the bucket as a origin. and creates a parametrized CloudFront Invalidation
+ * When an index.html is created/updated on a bucket: Finds a distribution that uses the bucket as a origin and creates a parametrized CloudFront Invalidation
  */
 console.log('S3 bucket -> CloudFront action : Loading event');
 var Q = require('q');
