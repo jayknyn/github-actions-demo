@@ -3,3 +3,6 @@
 ![NodeJS JK Test](https://github.com/jayknyn/github-actions-aws/workflows/NodeJS%20JK%20Test/badge.svg?branch=master)
 
 POC test app using github actions to deploy node app to AWS
+
+Steps:
+- in AWS, set group policies

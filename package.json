@@ -9,7 +9,7 @@
   "scripts": {
     "start": "nodemon ./server.js",
     "dev-build": "webpack --watch -d",
-    "install-npm-lambda": "cd lambda && npm install",
+    "install-npm-lambda": "cd lambda && yarn",
     "build": "webpack"
   },
   "dependencies": {
