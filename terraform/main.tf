@@ -21,7 +21,7 @@ resource "aws_s3_bucket" "b" {
   }
 
   tags = {
-    Name = "JK S3 Test Bucket"
+    Name = "Jay S3 Test Bucket"
   }
 
   policy = file("policy.json")

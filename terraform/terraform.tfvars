@@ -1,8 +1,8 @@
 region = "us-east-1"
 
-bucket_name = "jibhi-test-bucket"
+bucket_name = "ies-demo-bucket"
 
-s3_origin_id = "jk-s3-id"
+s3_origin_id = "jay-s3-id"
 
 # domain = "fourth-sandbox.com"
 
