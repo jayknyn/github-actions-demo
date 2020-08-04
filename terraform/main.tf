@@ -6,7 +6,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     # bucket = "jk-tf-remote-state-from-local"
-    bucket = "jk-tf-remote-state-from-actions"
+    bucket = "jk-tf-remote-state-from-actions-2020"
     key    = "terraform-state"
     region = "us-east-1"
   }
