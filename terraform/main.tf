@@ -31,10 +31,10 @@ resource "aws_s3_bucket" "b" {
   }
 }
 
-# resource "aws_iam_role" "jk-lambda-s3-cloudfront-v3" {
-#   name = "jk-lambda-s3-cloudfront-v3"
-#   policy = file("lambdapolicy.json")
-# }
+resource "aws_iam_role" "jk-lambda-s3-cloudfront-v3" {
+  name = "jk-lambda-s3-cloudfront-v3"
+  policy = file("lambdapolicy.json")
+}
 
 data "aws_iam_role" "jk-lambda-s3-cloudfront2" {
   name = "jk-lambda-s3-cloudfront2"
