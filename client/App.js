@@ -10,7 +10,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>IES is the best! Tuesday, Aug 4, 1640 hrs</h1>
+        <h1>IES is the best! Tuesday, Aug 4, 830 hrs</h1>
       </div>
     );
   }
