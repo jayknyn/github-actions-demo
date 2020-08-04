@@ -76,9 +76,9 @@ resource "aws_s3_bucket_notification" "bucket_notification" {
   }
 }
 
-data "aws_acm_certificate" "cert" {
-  domain = "*.${var.domain}"
-}
+# data "aws_acm_certificate" "cert" {
+#   domain = "*.${var.domain}"
+# }
 
 resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
   comment = "via terraform"
