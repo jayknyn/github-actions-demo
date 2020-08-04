@@ -69,7 +69,7 @@ function App({ classes }) {
             variant={"h4"}
             gutterBottom
           >
-            IES Demo Days - Aug 4, 930 hrs
+            IES Demo Days - Aug 4, 1430 hrs
           </Typography>
           <Typography
             className={"MuiTypography--subheading"}
