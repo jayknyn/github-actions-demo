@@ -31,13 +31,13 @@ resource "aws_s3_bucket" "b" {
   }
 }
 
-resource "aws_iam_role" "jk-lambda-s3-cloudfront-v3" {
-  name = "jk-lambda-s3-cloudfront-v3"
-  policy = file("lambdapolicy.json")
-}
+# resource "aws_iam_role" "jk-lambda-s3-cloudfront-v3" {
+#   name = "jk-lambda-s3-cloudfront-v3"
+#   policy = file("lambdapolicy.json")
+# }
 
-data "aws_iam_role" "jk-lambda-s3-cloudfront2" {
-  name = "jk-lambda-s3-cloudfront2"
+data "aws_iam_role" "jk-lambda-s3-cloudfront" {
+  name = "jk-lambda-s3-cloudfront"
 }
 
 data "archive_file" "lambda-s3-cf-func" {
@@ -59,7 +59,7 @@ resource "aws_lambda_function" "jk-lambda-s3-v4" {
   source_code_hash = data.archive_file.lambda-s3-cf-func.output_base64sha256
   function_name    = "jk-lambda-s3-v4"
   description      = "Trigger CloudFront invalidation on S3 bucket update"
-  role             = data.aws_iam_role.jk-lambda-s3-cloudfront2.arn
+  role             = data.aws_iam_role.jk-lambda-s3-cloudfront.arn
   handler          = "s3-bucket-cf-invalidation.handler"
   runtime          = "nodejs12.x"
   timeout          = "60"
