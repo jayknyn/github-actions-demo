@@ -13,11 +13,13 @@
     "build": "webpack"
   },
   "dependencies": {
+    "css-loader": "^4.2.0",
     "express": "^4.16.3",
     "nodemon": "^1.18.10",
     "path": "^0.12.7",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
+    "style-loader": "^1.2.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
